@@ -7,6 +7,6 @@ serve( async (_req) => {
           skipFirstRow: true,
     })
   return new Response(JSON.stringify(animals), {
-    headers: { "content-type": "text/plain" },
+    headers: { "content-type": "application/json" },
   });
 });
