@@ -1,7 +1,8 @@
-import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
+import {parse} from './parse.ts'
 
-serve((_req) => {
-  return new Response("Hello World!", {
+serve( async (_req) => {
+    const animals = await parse()
+  return new Response(JSON.stringify(animals), {
     headers: { "content-type": "text/plain" },
   });
 });
